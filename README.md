@@ -12,7 +12,7 @@ Based on [LinuxServer.io][linuxserverurl], with the addition SSL certificate ins
 
 ## Usage
 
-```
+```sh
 $ docker create --name=jackett \
   -v <path to data>:/config \
   -v <path to blackhole>:/downloads \
@@ -25,11 +25,10 @@ $ docker create --name=jackett \
 
 ## Parameters
 
-`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
+`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side.
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
 So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
-
 
 * `-p 9117` - the port(s)
 * `-v /config` - where Jackett should store its config file.
@@ -52,7 +51,7 @@ Sometimes when using data volumes (`-v` flags) permissions issues can arise betw
 
 In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as below:
 
-```
+```sh
 $ id <dockeruser>
   uid=1001(dockeruser) gid=1001(dockergroup) groups=1001(dockergroup)
 ```
