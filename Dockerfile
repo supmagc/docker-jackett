@@ -1,4 +1,4 @@
-FROM linuxserver/jackett
+FROM linuxserver/jackett:latest
 MAINTAINER supmagc
 
 # set version label
